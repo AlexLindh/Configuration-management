@@ -2,11 +2,19 @@
 
 ## x) Lue ja tiivistä
 
-- Salt asennettaan uutena arkistona, johon ladataan 2 tiedostoa (Karvinen 2025)
+- Salt asennettaan uutena arkistona, johon ladataan 2 tiedostoa (Karvinen 2025).
 
-- Uusi asennus linuxin ulkopuolelta vaatii täysin luoton, sillä binääritiedoston asennettua annetaan root oikeudet sovellukselle (Karvinen 2025)
+- Uusi asennus linuxin ulkopuolelta vaatii täysin luoton, sillä binääritiedoston asennettua annetaan root oikeudet sovellukselle (Karvinen 2025).
 
-- Paikalliset salt komennot ovat hyödyllisiä, sillä vastaukset saadaan välittömästi, joten testaukset ovat nopeapia ja tehokkaampia (Karvinen 2023)
+- Paikalliset salt komennot ovat hyödyllisiä, sillä vastaukset saadaan välittömästi, joten testaukset ovat nopeapia ja tehokkaampia (Karvinen 2023).
+
+- master-slave tekniikalla voi hallita tuhansia koneita samanaikaisesti helposti, jolloin manuaalinen työtaakka kevenee huomattavasti (Karvinen 2018).
+
+- Saltissa master-slave tekniikka on helpompaa kunhan orjat saavat yhteyden master koneeseen, eikä toisinpäin, joka olisi huomattavasti haastavampaa (Karvinen 2018).
+
+- Kirjoita raporttia aina samanaikaisesti kun teet tehtävää (Karvinen 2006).
+
+- Raportin kuuluu olla toistettava, täsmällinen, helppolukuinen ja lähteisiin viittaava (Karvinen 2006).
 
 ## b) Saltin asennus Linuxille (Karvinen 2025) ohjeiden mukaan.
 
