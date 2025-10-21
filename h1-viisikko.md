@@ -37,25 +37,38 @@ Lopuksi testasin Saltin, jotta se toimisi hakemalla sen version ja luomalla tied
 
 Versioksi sain salt 3007.8 (Chlorine) ja tiedoston luonti onnistui myös luomalla tiedoston ID:llä /tmp/helloalex
 
-## c) Viisi tärkeintä Saltin tilafunktiota
+## c) Viisi tärkeintä Saltin tilafunktiota (Karvinen 2023)
 
 pkg
-- Pakettien hallinnan työkalu
+- Pakettien hallintatyökalu
 - $ sudo salt-call --local -l info state.single pkg.installed tree komennolla sain asennettua paketin nimellä tree. Lyötyäni saman komennon uudestaan, ei se tehnyt mitään, koska paketti oli jo asennettu.
 - $ sudo salt-call --local -l info state.single pkg.removed tree komennolla sain poistettua luotuni tree nimisen paketin. Saman koodin laitettuani ei tapahtunut muutoksia, sillä kyseinen paketti oli jo poistettu.
 
 file
-- Tiedostojen hallinnan työkalu
+- Tiedostojen hallintatyökalu
 - Huomasin toimintaperiaatten olevan samanlainen kuin ylemmässä kohdassa.
 - $ sudo salt-call --local -l info state.single file.managed /tmp/helloalex komennolla sain luotua tiedoston nimellä /tmp/helloalex.
 - Sain lisättyä myös tekstiä tiedostoon lisäämällä komennon contents="<tekstiä>" aiemman komennon loppuun.
 - Sain poistettua tiedostot komennolla sudo salt-call --local -l info state.single file.absent /tmp/helloalex.
 
 service
-user
-cmd
+- Palveluiden hallintatyökalu
+- $ sudo salt-call --local -l info state.single service.running apache2 enable=True komennolla sain selville onko linxulla palvelu ID:llä apache2 käytössä.
+- $ sudo salt-call --local -l info state.single service.dead apache2 enable=False komennolla sain selvillä onko sama palvelu käytössä.
+- Testauksien jälkeen ensimmäinen komento ei onnistunut koska minulla ei ollut apache2 palvelua käytössä Linuxlla. Toinen komento onnistui juuri tämän takia.
 
-## d) Idempotentti
+user
+- Käyttäjien hallintatyökalu
+- $ sudo salt-call --local -l info state.single user.present alex komennolla sain selville, että käyttäjä nimeltä alex on käytössä ja ajantasalla.
+- $ sudo salt-call --local -l info state.single user.absent alex komennolla sain selville, että käyttäjää ei voida poistaa. Tämän jälkeen testasin eri nimisellä käyttäjällä, joka ilmoitti, että käyttäjää nimeltä alex2 ei ole käytössä.
+
+cmd
+- Komentojen hallintatyökalu
+- $ sudo salt-call --local -l info state.single cmd.run 'touch /tmp/foo' komennolla sain luotua uuden tekstitiedoston, mutta se ei ole idempotentti vaan luo aina uuden tiedoston jos komennon suorittaa monta kertaa.
+
+## d) Idempotentti (Karvinen 2023)
+Idempotenssit ilmenivät tehtäviä tehdessäni siten, että osa komentoja kun suoritti, ei se aina tehnyt muutoksia. Esimerkiksi luodessani uutta tiedostoa tai pakettia file tai pkg -salt komennoilla, loi ensimmäinen komento tiedostot ja toisella kerralla ei tehnyt muutoksia. Huomasin myös sen, että cmd komennoilla sai luotua aina uusia tiedostoja siitä riippumatta olivatko tiedostot jo olemassa.
+
 
 ## Lähteet
 
