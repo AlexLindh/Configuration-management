@@ -37,9 +37,25 @@ Lopuksi testasin Saltin, jotta se toimisi hakemalla sen version ja luomalla tied
 
 Versioksi sain salt 3007.8 (Chlorine) ja tiedoston luonti onnistui myös luomalla tiedoston ID:llä /tmp/helloalex
 
-## c)
+## c) Viisi tärkeintä Saltin tilafunktiota
 
-## d)
+pkg
+- Pakettien hallinnan työkalu
+- $ sudo salt-call --local -l info state.single pkg.installed tree komennolla sain asennettua paketin nimellä tree. Lyötyäni saman komennon uudestaan, ei se tehnyt mitään, koska paketti oli jo asennettu.
+- $ sudo salt-call --local -l info state.single pkg.removed tree komennolla sain poistettua luotuni tree nimisen paketin. Saman koodin laitettuani ei tapahtunut muutoksia, sillä kyseinen paketti oli jo poistettu.
+
+file
+- Tiedostojen hallinnan työkalu
+- Huomasin toimintaperiaatten olevan samanlainen kuin ylemmässä kohdassa.
+- $ sudo salt-call --local -l info state.single file.managed /tmp/helloalex komennolla sain luotua tiedoston nimellä /tmp/helloalex.
+- Sain lisättyä myös tekstiä tiedostoon lisäämällä komennon contents="<tekstiä>" aiemman komennon loppuun.
+- Sain poistettua tiedostot komennolla sudo salt-call --local -l info state.single file.absent /tmp/helloalex.
+
+service
+user
+cmd
+
+## d) Idempotentti
 
 ## Lähteet
 
