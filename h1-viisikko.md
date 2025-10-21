@@ -1,6 +1,6 @@
 # h1 - Viisikko
 
-x) Lue ja tiivistä
+## x) Lue ja tiivistä
 
 - Salt asennettaan uutena arkistona, johon ladataan 2 tiedostoa (Karvinen 2025)
 
@@ -8,7 +8,7 @@ x) Lue ja tiivistä
 
 - Paikalliset salt komennot ovat hyödyllisiä, sillä vastaukset saadaan välittömästi, joten testaukset ovat nopeapia ja tehokkaampia (Karvinen 2023)
 
-b) Saltin asennus Linuxille
+## b) Saltin asennus Linuxille (Karvinen 2025) ohjeiden mukaan.
 
 Aloitin Saltin asentamisen linuxille asentamalla wget tiedostot:
 
@@ -37,9 +37,9 @@ Lopuksi testasin Saltin, jotta se toimisi hakemalla sen version ja luomalla tied
 
 Versioksi sain salt 3007.8 (Chlorine) ja tiedoston luonti onnistui myös luomalla tiedoston ID:llä /tmp/helloalex
 
-c)
+## c)
 
-d)
+## d)
 
 ## Lähteet
 
