@@ -104,9 +104,17 @@
 
 ### CMD:
 
-  asd
+  - Loin /hellocmd -kansioon init.sls tiedoston, joka luo uuden tiedoston nimellä "testiteksti" ja päivittää sen aikaleiman aina, kun init.sls -tiedosto ajetaan.
 
-  loppu
+  <img width="362" height="142" alt="kuva" src="https://github.com/user-attachments/assets/aecc79ab-8040-42ec-bca5-82282bdb55de" />
+
+  <img width="888" height="714" alt="kuva" src="https://github.com/user-attachments/assets/05108e99-0a4c-4802-bd5b-f0d35e68994a" />
+
+  - Komento luo ja päivittää tekstitiedoston onnistuneesti.
+  - Tarkistin vielä /tmp -kansiosta, että tekstitiedosto on oikeasti luotu komennon puolesta.
+
+    <img width="534" height="502" alt="kuva" src="https://github.com/user-attachments/assets/781f8b7c-8669-44db-913b-b2abfe7d2179" />
+
 
 ## d) Tee sls-tiedosto, joka käyttää vähintään kahta eri tilafunktiota näistä: package, file, service, user. Tarkista eri ohjelmalla, että lopputulos on oikea. Osoita useammalla ajolla, että sls-tiedostosi on idempotentti.
 
