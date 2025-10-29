@@ -151,9 +151,9 @@
 
 ## Lähteet:
 
-https://terokarvinen.com/2024/hello-salt-infra-as-code/
+Karvinen. 2014. Hello Salt Infra-as-Code https://terokarvinen.com/2024/hello-salt-infra-as-code/
 
-https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml
+Salt contributors. Salt overview https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml
 
-https://docs.saltproject.io/en/latest/ref/states/top.html
+Salt contributors. The top file https://docs.saltproject.io/en/latest/ref/states/top.html
 
