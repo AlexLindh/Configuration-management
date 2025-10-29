@@ -118,6 +118,37 @@
 
 ## d) Tee sls-tiedosto, joka käyttää vähintään kahta eri tilafunktiota näistä: package, file, service, user. Tarkista eri ohjelmalla, että lopputulos on oikea. Osoita useammalla ajolla, että sls-tiedostosi on idempotentti.
 
+  - Tarkistin ensin, että pakettia httpie ei oltu valmiiksi asennettuna:
+
+    <img width="692" height="124" alt="kuva" src="https://github.com/user-attachments/assets/24258f0f-035f-47c4-ad3a-e52c9a7f12b7" />
+
+  - Seuraavaksi loin kaksi uutta kansiota /helloweb ja /hellofile
+
+    <img width="1138" height="272" alt="kuva" src="https://github.com/user-attachments/assets/e6d16b1c-8737-4113-a01b-d5170a7b7207" />
+
+  - Seuraavaksi loin /helloweb -kansioon init.sls tiedoston joka asentaa ja tarkistaa onko "httpie" paketti asennettuna.
+  - /hellofile -kansioon loin init.sls tiedoston, joka luo ja päivittää /tmp -kansioon hello-h2 -tiedoston.
+   
+      <img width="302" height="154" alt="kuva" src="https://github.com/user-attachments/assets/bd235a00-2993-4fca-99e8-75a05979e41a" />
+      <img width="308" height="192" alt="kuva" src="https://github.com/user-attachments/assets/5512f53c-29e5-4cb1-bb0e-50e5e13b6b0e" />
+
+  - Seuraavaksi muokkasin top-fileä siten, että sen ajettua se ajaa molemmat /hellofile ja /helloweb -kansioiden init.sls tiedostot.
+
+    <img width="356" height="202" alt="kuva" src="https://github.com/user-attachments/assets/7bee279a-eb0b-4930-b278-60af986848ed" />
+
+  - Ajettua top-file:n loi se uuden tiedoston nimeltä hello-h2 /tmp -kansioon ja asensi httpie -paketin.
+
+    <img width="976" height="1002" alt="kuva" src="https://github.com/user-attachments/assets/78b6d341-81a7-41b6-9a58-04122ec2e865" />
+
+  - Ajamalla top-file muutama kerta uudestaan, ei se tehnyt mitään muutoksia. Idempotenssi tuli tässä selväksi.
+
+    <img width="846" height="746" alt="kuva" src="https://github.com/user-attachments/assets/2385144d-6ef1-4267-bba3-23142b4cf852" />
+
+  - Tarkistin vielä manuaalisesti, että komennot tekivät mitä niiden kuului tehdä. /tmp -kansioon oli luotu uusi tiedosto nimeltä "hello-h2" ja httpie on myös onnistuneesti asennettu.
+
+    <img width="828" height="768" alt="kuva" src="https://github.com/user-attachments/assets/f28aed58-f493-4eb1-9d07-e2fd9e06e3f0" />
+
+
 ## Lähteet:
 
 https://terokarvinen.com/2024/hello-salt-infra-as-code/
