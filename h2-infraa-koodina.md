@@ -55,37 +55,52 @@
 
 ### Package:
 
-  Aloitin luomalla /hellopkg -kansioon init.sls tiedoston '$ sudoedit' -komennolla.
+  - Aloitin luomalla /hellopkg -kansioon init.sls tiedoston '$ sudoedit' -komennolla.
 
-  Loin init.sls -tiedostoon koodin, joka asentaa "tree" -palvelun ajettuaan.
+  - Loin init.sls -tiedostoon koodin, joka asentaa "tree" -palvelun ajettuaan.
 
   <img width="246" height="110" alt="kuva" src="https://github.com/user-attachments/assets/f89e878c-bbca-4215-bcd0-28b858ab0fb1" />
 
-  Testasin vielä ajamalla /hellopkg:n init.sls -tiedoston testatakseen sen toimivuuden
+  - Testasin vielä ajamalla /hellopkg:n init.sls -tiedoston testatakseen sen toimivuuden
 
   <img width="1000" height="488" alt="kuva" src="https://github.com/user-attachments/assets/f117a66b-8855-4c7b-a0cf-3e6c8f0ed1b7" />
 
 ### File:
 
-  Tiedoston luonti onnistui aikaisemmassa tehtävässä /helloalex -kansiossa olevassa init.sls -tiedostosta, joka loi /tmp -kansioon hello-infra nimisen tekstitiedoston.
+  - Tiedoston luonti onnistui aikaisemmassa tehtävässä /helloalex -kansiossa olevassa init.sls -tiedostosta, joka loi /tmp -kansioon hello-infra nimisen tekstitiedoston.
 
-  Kävin muokkaamassa kyseistä init.sls -tiedostoa siten, että luomaan tekstitiedostoon tulee tekstiä.
+  - Kävin muokkaamassa kyseistä init.sls -tiedostoa siten, että luomaan tekstitiedostoon tulee tekstiä.
 
   <img width="268" height="120" alt="kuva" src="https://github.com/user-attachments/assets/185ab766-3ecf-479c-b1d6-136f501abbe8" />
 
-  Ajettuani helloalex -kansion uudestaan teki se muutoksen ja lisäsi tekstiä jo luomaan tiedostoon.
+  - Ajettuani helloalex -kansion uudestaan teki se muutoksen ja lisäsi tekstiä jo luomaan tiedostoon.
 
   <img width="1026" height="654" alt="kuva" src="https://github.com/user-attachments/assets/98628af7-4dc4-42e6-8435-cc2c6a76ac2a" />
 
-  asd
+  - Testasin vielä ajaa komennon uudestaan, joka ei tehnyt uudestaan muutoksia. Idempotenssi tuli tässä ilmi.
+  - Tarkistin myös '$ nano /tmp/hello-infra' -komennolla tekstitiedoston sisällön, että koodi oli oikeasti luonut tiedostoon tekstiä.
   
 ### Service:
 
-  asd
+  - Loin /hellosrv -kansioon init.sls tiedoston joka tarkistaa onko apache2 -palvelu käynnissä aina kun init.sls tiedosto ajetaan.
+
+    <img width="250" height="70" alt="kuva" src="https://github.com/user-attachments/assets/677ea3a0-6546-42a6-a16c-0a24a97e6bfb" />
+
+
+    <img width="870" height="512" alt="kuva" src="https://github.com/user-attachments/assets/7a1b5301-5eac-4a50-8f0b-839b06b4b449" />
+
+  - Ajettuani /hellosrv:n tuli virhekoodi, koska en ole vielä asentanut apache2 -palvelua, joten se ilmoittaa, että se ei ole päällä.
+
 
 ### User:
 
-  acd
+  - Loin /hellouser -kansioon init.sls tiedoston, joka tarkistaa onko alex niminen käyttäjä käytössä aina, kun init.sls tiedosto ajetaan.
+
+    <img width="218" height="78" alt="kuva" src="https://github.com/user-attachments/assets/78a381ef-6bfa-46e3-ba60-36c2b4164c0a" />
+
+    <img width="1032" height="546" alt="kuva" src="https://github.com/user-attachments/assets/17c9b1bb-ca67-44fe-9437-83ec807911fc" />
+
+ - Koodi tarkistaa onnistuneesti, että käyttäjä nimeltä Alex on käytössä.
 
 ### CMD:
 
