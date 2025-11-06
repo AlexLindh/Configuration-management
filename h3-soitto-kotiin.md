@@ -2,8 +2,16 @@
 
 ## x) Lue ja tiivistä
 
+- Vagrantilla voidaan automaattisesti luoda ja hallita virtuaalikoneita. (Karvinen 2021)
+- Linuxille vagrantin asennus menee apt-getin kautta ja windowssissa/macissa installerin kautta. (Karvinen 2021)
+- Saltilla voit komentaa jopa tuhansia koneita. (Karvinen 2018)
+- Vain master -koneella pitää olla tiedetty ip-osoite mihin orjat ottavat yhteyden. (Karvinen 2018)
+- Infraa koodilla pystyt suorittamaan nopeasti erilaisia työtehtäviä komentokehotteella. (Karvinen 2023)
+- Top.sls tiedostolla pystyt ajamaan monia tilafunktiota helposti yhdellä komennolla. (Karvinen 2023)
+
 ## a) Hello Vagrant ja VirtualBox!
-- Aloitin vagrantin asentamisen (Karvinen vuosi) ja (salminen vuosi) ohjeiden mukaan isäntäjärjestelmään, koska vinkeissä oli kerrottu, että vagrant toimii huonosti virtuaalikoneen sisällä. Vagrantin asennusohjelman löysin vagrantin omilta verkkosivuilta: https://developer.hashicorp.com/vagrant/downloads.
+
+- Aloitin vagrantin asentamisen (Salminen 2020) ohjeiden mukaan isäntäjärjestelmään, koska vinkeissä oli kerrottu, että vagrant toimii huonosti virtuaalikoneen sisällä. Vagrantin asennusohjelman löysin vagrantin omilta verkkosivuilta: https://developer.hashicorp.com/vagrant/downloads.
 - Vagrantin ladattua ja velhon asennettua käynnistin koneen uudelleen ja testasin, että CMD:llä, että vagrant oikeasti asentui.
 
   <img width="1004" height="526" alt="kuva" src="https://github.com/user-attachments/assets/a3fa6d0c-6d2e-4597-aa6f-1840a0d66ccf" />
@@ -11,10 +19,11 @@
 - VirtualBox oli jo asennettuna, eikä asennuksessa ollut mitään ongelmia!
 
   <img width="1004" height="669" alt="kuva" src="https://github.com/user-attachments/assets/3acbd5d8-f8e3-4f5e-afc6-cfaf04b297cc" />
-
+  
 ## b & c) Uusien virtuaalikoneiden luonti vagrantilla ja verkon testaaminen
-- Uusien virtuaalikoneiden luomisen aloitin ensin luomalla hakemiston ~/twohost vagrantille minne luon Vagrantfilen komennolla '$ vagrant init'
-- Seuraavaksi aloin muokkaamaan juuri luomaa Vagrantfile tiedostoa komennolla: '$ notepad Vagrantfile' ja kopioin (karvinen vuosi) ohjeista tiedoston sisällön ja muokkasin ip-osoitteita niin, että vaihdoin 192.168.88.101/102 -> 192.168.56.101/102, koska alkuperäinen ei ollut sallittu alue, joka tuli vastaan ekalla kerralla, kun yritin käynnistää vagranttia.
+
+- Uusien virtuaalikoneiden luomisen aloitin (Karvinen 2021) ohjeiden mukaisesti ensin luomalla hakemiston ~/twohost vagrantille minne luon Vagrantfilen komennolla '$ vagrant init'
+- Seuraavaksi aloin muokkaamaan juuri luomaa Vagrantfile tiedostoa komennolla: '$ notepad Vagrantfile' ja kopioin (Karvinen 2021) ohjeista tiedoston sisällön ja muokkasin ip-osoitteita niin, että vaihdoin 192.168.88.101/102 -> 192.168.56.101/102, koska alkuperäinen ei ollut sallittu alue, joka tuli vastaan ekalla kerralla, kun yritin käynnistää vagranttia.
 
   <img width="1004" height="726" alt="kuva" src="https://github.com/user-attachments/assets/22f80560-fcb8-49c2-bc23-2fcb45787fe5" />
 
@@ -31,7 +40,8 @@
 - Pingaus toimi moitteettomasti!
 
 ## d) Herra-orja arkkitehtuuri verkon yli
-- Aloitin asentamalla molemmille koneille saltin (karvinen vuosi) ohjeiden mukaisesti. Saltin asennuksessa ei ollut ongelmia. Asensin t001 salt-masterin ja t002 salt-minion.
+
+- Aloitin asentamalla molemmille koneille saltin (Karvinen 2025) ohjeiden mukaisesti. Saltin asennuksessa ei ollut ongelmia. Asensin t001 salt-masterin ja t002 salt-minion.
 - Seuraavaksi orja koneella komennolla '$ sudoedit /etc/salt/minion' loin tiedoston mihin lisässin master koneen ip-osoitteen jotta se voisi ottaa yhteyttä verkon yli masteriin.
 
   <img width="1004" height="233" alt="kuva" src="https://github.com/user-attachments/assets/1b9bfa20-e24d-4806-a838-8400a73c54a3" />
@@ -56,8 +66,32 @@
 
 ## e) Kahden eri tilan testaaminen verkon yli
 
+- Testasin vielä kahta muuta tilaa verkon yli: package ja user.
+
+  <img width="2519" height="1442" alt="kuva" src="https://github.com/user-attachments/assets/76920c11-9c66-4e3b-8bb9-dffaadffe673" />
+
+
+  <img width="1190" height="563" alt="kuva" src="https://github.com/user-attachments/assets/6467b499-e741-4e78-8373-6a1cf8f81264" />
+
+
+  <img width="1737" height="1190" alt="kuva" src="https://github.com/user-attachments/assets/4be24131-0192-4619-bea5-44210ba342fb" />
+
+- Package komennolla sain asennettua httpie paketin orjille ja user komennolla tarkistin ensin, että käyttäjä vagrant on päällä ja ajantasalla. Loin tämän jälkeen vielä uuden käyttäjän orjalle nimellä t002.
+
+- Lopuksi vielä poistuin virtuaalikoneista komennolla '$ exit' ja tuhosin koneet CMD:ssä komennolla '$ vagrant destroy'.
+
+  <img width="1004" height="352" alt="kuva" src="https://github.com/user-attachments/assets/fcbe12d6-8f00-4f66-80a8-11cd36005e5f" />
+
+
 ## Lähteet:
 
-https://terokarvinen.com/install-salt-on-debian-13-trixie/
-https://oispadotka.wordpress.com/2020/05/12/h6/
-https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/
+Karvinen 2018. Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux. Luettavissa: https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/?fromSearch=salt%20quickstart%20salt%20stack%20master%20and%20slave%20on%20ubuntu%20linux. Luettu 6.11.2025.
+
+Karvinen 2021. Two Machine Virtual Network With Debian 11 Bullseye and Vagrant. Luettavissa: https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/. Luettu 6.11.2025.
+
+Karvinen 2023. Salt Vagrant - automatically provision one master and two slaves. Luettavissa: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file. Luettu 6.11.2025.
+
+Karvinen 2025. Install Salt on Debian 13 Trixie. Luettavissa: https://terokarvinen.com/install-salt-on-debian-13-trixie/. Luettu 6.11.2025.
+
+Salminen 2020. h6. Luettavissa: https://oispadotka.wordpress.com/2020/05/12/h6/. Luettu 6.11.2025.
+
