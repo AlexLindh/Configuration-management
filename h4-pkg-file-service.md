@@ -2,6 +2,10 @@
 
 ## Lue ja tiivistä
 
+- pkg-file-service on yleinen tapa hallita konfiguraatioita keskitetyssä palvelinten hallinnassa. (Karvinen 2018)
+
+- pkg-file-servicessä asennetaan paketti, muokataan tiedostoa ja käynnistetään se uudelleen automaattisesti. (Karvinen 2018)
+
 ## SSHouto. Lisää uusi portti, jossa SSHd kuuntelee.
 
 ### Koneiden ja Saltin asentaminen
@@ -242,6 +246,10 @@ Yhteydet pelaa!
 
 Uusi avattu portti '1234' toimii ja avaamaton portti '8888' pysyy kiinni!
 
+
+## Lähteet:
+
+Karvinen 2018. Pkg-File-Service – Control Daemons with Salt – Change SSH Server Port. Luettavissa: https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/. Luettu 14.11.2025
 
 
 
