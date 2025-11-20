@@ -2,6 +2,16 @@
 
 ## x) Lue ja tiivistä
 
+- Git on versionhallintatyökalu, jossa kaikilla työntekijöillä on täydellinen kopio repositeriosta ja historiasta ihan sama missä kohtaa tulee lisätyksi. (Chacon & Straub 2014)
+
+- 'git add .' komento lisää kaikki luomat uudet tiedostot tai päivitykset indeksiin. (Git 2025a)
+
+- 'git commit' komento luo uuden commitin sen hetkisestä indeksistä. Uudelle commitille tulee myös uusi lokiviesti. (Git 2025b)
+
+- 'git pull' komento tuo kaikki muutokset verkon yli olevasta repositoriosta nykyiseen haaraan. (Git 2025c)
+
+- 'git push' komento päivittää verkon yli olevan repositorion paikallisesta haarasta, jotta tehdyt muutokset tulevat näkyviin weppiin. (Git 2025d)
+
 ## a) Uuden varaston luonti githubiin
 
 Aloitin tehtävän luomalla githubissa uuden varaston. Lisäsin luomisvaiheessa myös README.md -tiedoston ja GNU general public license 3.0:n.
@@ -55,9 +65,23 @@ Kuvani esimerkissä ensimmäisessä commitissa oltiin luotu lisää tekstiä ja 
 
 ## e) Aja salt tiloja omasta varastostasi
 
-Aloin saltin tilojen ajamisen luomalla ensin repositorioon srv/salt/ hakemiston johon loin kaksi eri tila -kansiota. 'Hello' kansio luo tmp hakemistoon tiedoston ja 'packages' tila asentaa muutaman eri paketin. Loin myös top-filen joka ajaa nämä molemmat tilat.
+Aloin saltin tilojen ajamisen luomalla ensin repositorioon srv/salt/ hakemiston johon loin kaksi eri tila -kansiota. 'Hello' kansio luo tmp hakemistoon tiedoston ja 'packages' tila asentaa muutaman eri paketin. Loin myös top-filen joka ajaa nämä molemmat tilat. Tiedostopolkujen ja tiedostojen luontia varten käytin apunani Karvisen githubbia (https://github.com/terokarvinen/suolax).
 
 <img width="1004" height="593" alt="kuva" src="https://github.com/user-attachments/assets/0bb82f22-714f-4d4d-812b-7afe12d606f8" />
 Onnistui!
 
 Kaikki onnistui moitteettomasti. Tiedosto luotiin ja paketit olivat jo asennettu.
+
+## Lähteet:
+
+Chacon & Straub 2014. What is Git? Luettavissa: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F. Luettu: 20.11.2025.
+
+Git 2025a. gitadd. Luettavissa: https://git-scm.com/docs/git-add. Luettu: 20.11.2025.
+
+Git 2025b. git commit. Luettavissa: https://git-scm.com/docs/git-commit. Luettu 20.11.2025.
+
+Git 2025c. git pull. Luettavissa: https://git-scm.com/docs/git-pull. Luettu 20.11.2025.
+
+Git 2025d. git push. Luettavissa: https://git-scm.com/docs/git-push. Luettu 20.11.2025.
+
+Karvinen 2024. suolax. Luettavissa: https://github.com/terokarvinen/suolax. Luettu: 20.11.2025.
