@@ -44,4 +44,20 @@ Kaikki toimii taas!
 
 ## d) Tarkastele ja selitä varastosi lokia. Tarkista, että nimi ja sähköposti ovat oikeat
 
+<img width="1004" height="582" alt="kuva" src="https://github.com/user-attachments/assets/5c37a4c9-6ff4-4a56-b029-893a0c288281" />
+
+    git log --patch
+
+Tällä komennolla sain lokit näkyviin, joka näyttää hieman tarkemmin mitä on tullut tehtyä.
+
+Kuvani esimerkissä ensimmäisessä commitissa oltiin luotu lisää tekstiä ja selitys sille, miksi tämä kiihkeä fanfictioni on luotu ja toisessa commitissa oltiin korjattu kirjoitusvirheitä. Nimi ja sähköpostini ovat myös oikein!
+
+
 ## e) Aja salt tiloja omasta varastostasi
+
+Aloin saltin tilojen ajamisen luomalla ensin repositorioon srv/salt/ hakemiston johon loin kaksi eri tila -kansiota. 'Hello' kansio luo tmp hakemistoon tiedoston ja 'packages' tila asentaa muutaman eri paketin. Loin myös top-filen joka ajaa nämä molemmat tilat.
+
+<img width="1004" height="593" alt="kuva" src="https://github.com/user-attachments/assets/0bb82f22-714f-4d4d-812b-7afe12d606f8" />
+Onnistui!
+
+Kaikki onnistui moitteettomasti. Tiedosto luotiin ja paketit olivat jo asennettu.
